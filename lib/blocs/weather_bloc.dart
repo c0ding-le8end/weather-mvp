@@ -9,6 +9,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState>{
   WeatherRepository _weatherRepository = WeatherRepository();
 
   WeatherBloc() : super(WeatherEmpty()) {
+
     on<FetchWeather>((event, emit) async {
       try
       {

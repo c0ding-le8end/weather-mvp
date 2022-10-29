@@ -1,5 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.weather_mvp">
+    <queries>
+        <intent>
+            <action android:name=
+                            "android.support.customtabs.action.CustomTabsService" />
+        </intent>
+    </queries>
    <application
         android:label="weather_mvp"
         android:name="${applicationName}"
@@ -30,5 +36,16 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <activity
+               android:name="com.amplifyframework.auth.cognito.activities.HostedUIRedirectActivity"
+               android:exported="true">
+           <intent-filter>
+               <action android:name="android.intent.action.VIEW" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.BROWSABLE" />
+               <data android:scheme="myapp" />
+           </intent-filter>
+       </activity>
     </application>
+
 </manifest>
